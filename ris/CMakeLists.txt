@@ -14,6 +14,8 @@ find_package(
     roslib
     ris_msgs
     std_msgs
+    sensor_msgs
+    geometry_msgs
     message_runtime
 )
 
