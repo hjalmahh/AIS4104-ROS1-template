@@ -1,0 +1,14 @@
+<launch>
+  <node name="laserline" pkg="ris" type="line_segment" output="screen">
+    <param name="~frame_id" value="laser_frame" />
+    <param name="~scan_topic" value="scan" />
+    <param name="~frequency" value="8.0" />
+    <param name="~show_lines" value="true" />
+    <param name="~least_thresh" value="0.1" />
+    <param name="~min_line_length" value="0.5" />
+    <param name="~predict_distance" value="5" />
+    <param name="~seed_line_points" value="6" />
+    <param name="~min_line_points" value="10" />
+  </node>
+  <node name="rviz" pkg="rviz" type="rviz" args="-d $(find ris)/rviz/laserline.rviz" required="true" />
+</launch>
