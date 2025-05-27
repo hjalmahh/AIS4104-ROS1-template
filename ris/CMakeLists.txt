@@ -8,6 +8,8 @@ add_compile_options(-fPIC -Wall -pedantic)
 
 set(CMAKE_INCLUDE_CURRENT_DIR ON)
 
+include_directories("/usr/include/eigen3")
+
 find_package(
     catkin REQUIRED COMPONENTS
     roscpp
@@ -17,6 +19,8 @@ find_package(
     sensor_msgs
     geometry_msgs
     message_runtime
+        tf2
+        tf2_ros
 )
 
 catkin_package(

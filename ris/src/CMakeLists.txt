@@ -1,4 +1,5 @@
 add_subdirectory(line_segment)
+add_subdirectory(pose_predictor)
 add_subdirectory(hjalmar)
 add_subdirectory(hello_world)
 add_subdirectory(hello_server)

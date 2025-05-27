@@ -1,5 +1,8 @@
 add_executable(hello_client
     main.cpp
+        ../pose_predictor/KalmanFilter.h
+        ../pose_predictor/kalmanFilter.cpp
+        ../pose_predictor/main.cpp
 
 )
 

@@ -4,11 +4,18 @@
     <param name="~scan_topic" value="scan" />
     <param name="~frequency" value="8.0" />
     <param name="~show_lines" value="true" />
-    <param name="~least_thresh" value="0.1" />
-    <param name="~min_line_length" value="0.5" />
-    <param name="~predict_distance" value="5" />
-    <param name="~seed_line_points" value="6" />
-    <param name="~min_line_points" value="10" />
+    <param name="~least_thresh" value="0.5" />    <!-- Threshold for least-squares line fitting error -->
+    <param name="~min_line_length" value="0.6" />    <!-- Minimum physical length (in meters) for a line to be kept -->
+    <param name="~predict_distance" value="10" />    <!-- Maximum allowable distance between a predicted point on the line and the actual scan point -->
+    <param name="~seed_line_points" value="3" />    <!-- Number of initial scan points used to try and form a seed line -->
+    <param name="~min_line_points" value="10" />    <!-- Minimum number of consecutive points required for a segment to be considered a valid line -->
   </node>
-  <node name="rviz" pkg="rviz" type="rviz" args="-d $(find ris)/rviz/laserline.rviz" required="true" />
+
+   <node name="line_mapping" pkg="ris" type="line_mapping" output="screen">
+      <param name="resolution" value="0.1" />
+      <param name="width" value="500" />
+      <param name="height" value="500" />
+      <param name="map_frame" value="map" />
+      <param name="base_frame" value="laser_frame" />
+    </node>
 </launch>

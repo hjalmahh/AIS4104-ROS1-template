@@ -3,6 +3,7 @@ add_executable(line_segment
         src/laser_ros.cpp
         src/line_detect.cpp
 
+
 )
 
 add_dependencies(line_segment ${catkin_EXPORTED_TARGETS})
